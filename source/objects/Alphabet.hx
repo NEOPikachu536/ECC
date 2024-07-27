@@ -242,7 +242,7 @@ class Alphabet extends FlxSpriteGroup
 
 		for (letter in letters)
 		{
-			letter.rowWidth = rowData[letter.row] / scale.x;
+			letter.rowWidth = rowData[letter.row];
 		}
 
 		if(letters.length > 0) rows++;
@@ -389,13 +389,13 @@ class AlphaCharacter extends FlxSprite
 			if(curLetter != null && curLetter.anim != null) alphaAnim = curLetter.anim;
 
 			var anim:String = alphaAnim + suffix;
-			animation.addByPrefix(anim, anim, 24);
+			animation.addByPrefix(anim, '${anim} instance 1', 24);
 			animation.play(anim, true);
 			if(animation.curAnim == null)
 			{
 				if(suffix != ' bold') suffix = ' normal';
 				anim = 'question' + suffix;
-				animation.addByPrefix(anim, anim, 24);
+				animation.addByPrefix(anim, '${anim} instance 1', 24);
 				animation.play(anim, true);
 			}
 		}
