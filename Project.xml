@@ -72,12 +72,12 @@
 	<library name="songs"         preload="true" />
 	<library name="week_assets"   preload="true" />
 
-	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
+	<!-- <define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/> --> <!-- I'll look into this later -->
 
 	<section if="MODS_ALLOWED">
 		<assets path='example_mods' rename='mods' embed='false'/>
 	</section>
-	<assets path='art/readme.txt' rename='do NOT readme.txt' />
+	<!-- <assets path='art/readme.txt' rename='do NOT readme.txt' /> -->
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
