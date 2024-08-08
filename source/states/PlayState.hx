@@ -80,7 +80,7 @@ class PlayState extends MusicBeatState
 	public static var STRUM_X = 42;
 	public static var STRUM_X_MIDDLESCROLL = -278;
 
-	public static var ratingStuff:Array<Dynamic> = [
+	public var ratingStuff:Array<Dynamic> = [
 		['You Suck!', 0.2], //From 0% to 19%
 		['Shit', 0.4], //From 20% to 39%
 		['Bad', 0.5], //From 40% to 49%
@@ -611,6 +611,17 @@ class PlayState extends MusicBeatState
 				#end
 			}
 		#end
+
+		// Replace ratings if file is found
+		var list = CoolUtil.coolTextFile('assets/shared/data/${songName}/ratings.txt');
+		if(list.length > 0)
+		{
+			for(i in 0...ratingStuff.length)
+			{
+				if(i >= list.length) break;
+				ratingStuff[i][0] = list[i];
+			}
+		}
 
 		startCallback();
 		RecalculateRating();
