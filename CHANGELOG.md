@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - TBD
 ### Added
+- a rating.txt can be included in a song's data folder to alter the song ratings
 
 ### Fixed
-- Alphabet logging animation errors
+- Alphabet animation logging errors
+- Boyfriend HEY animation logging errors

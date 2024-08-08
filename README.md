@@ -1,3 +1,5 @@
 # Elemental / Color Code Psych-mod
 
-A description needs to be created by Neo :|
+A port of the [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) for Elemental / Color Code mod
+
+Building is identical to Psych's
