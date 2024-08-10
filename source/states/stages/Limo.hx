@@ -39,7 +39,7 @@ class Limo extends BaseStage
 			bgLimo = new BGSprite('limo/bgLimo', -150, 480, 0.4, 0.4, ['background limo pink'], true);
 			add(bgLimo);
 
-			limoCorpse = new BGSprite('gore/noooooo', -500, limoMetalPole.y - 130, 0.4, 0.4, ['Henchmen on rail'], true);
+			limoCorpse = new BGSprite('gore/noooooo', -500, limoMetalPole.y - 130, 0.4, 0.4, ['Henchmen on rail PINK'], true);
 			add(limoCorpse);
 
 			limoCorpseTwo = new BGSprite('gore/noooooo', -500, limoMetalPole.y, 0.4, 0.4, ['henchmen death'], true);
@@ -75,13 +75,14 @@ class Limo extends BaseStage
 		fastCar = new BGSprite('limo/fastCarLol', -300, 160);
 		fastCar.active = true;
 	}
+	
 	override function createPost()
 	{
 		resetFastCar();
 		addBehindGF(fastCar);
 		
 		var limo:BGSprite = new BGSprite('limo/limoDrive', -120, 550, 1, 1, ['Limo stage'], true);
-		addBehindGF(limo); //Shitty layering but whatev it works LOL
+		addBehindDad(limo);
 	}
 
 	var limoSpeed:Float = 0;
