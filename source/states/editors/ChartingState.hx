@@ -500,7 +500,6 @@ class ChartingState extends MusicBeatState
 				tempArray.push(character);
 		}
 
-		#if MODS_ALLOWED
 		for (i in 0...directories.length) {
 			var directory:String = directories[i];
 			if(FileSystem.exists(directory)) {
@@ -516,7 +515,6 @@ class ChartingState extends MusicBeatState
 				}
 			}
 		}
-		#end
 		tempArray = [];
 
 		var player1DropDown = new FlxUIDropDownMenu(10, stepperSpeed.y + 45, FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String)
