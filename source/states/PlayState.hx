@@ -567,6 +567,14 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.data.downScroll)
 			botplayTxt.y = timeBar.y - 78;
 
+		if(SONG.authors != null && SONG.authors.length > 0)
+		{
+			var songCredits = new CreditPopUp(SONG.song, SONG.authors);
+			songCredits.scrollFactor.set();
+			songCredits.setPosition(8, FlxG.height - songCredits.totalHeight - 8);
+			uiGroup.add(songCredits);
+		}
+
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];
 		comboGroup.cameras = [camHUD];

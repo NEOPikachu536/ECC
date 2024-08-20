@@ -1348,6 +1348,7 @@ class ChartingState extends MusicBeatState
 	var gameOverSoundInputText:FlxUIInputText;
 	var gameOverLoopInputText:FlxUIInputText;
 	var gameOverEndInputText:FlxUIInputText;
+	var songAuthorsInput:FlxUIInputText;
 	var noteSkinInputText:FlxUIInputText;
 	var noteSplashesInputText:FlxUIInputText;
 	function addDataUI()
@@ -1378,6 +1379,10 @@ class ChartingState extends MusicBeatState
 			//trace('CHECKED!');
 		};
 
+		var authors = _song.authors == null ? "" : _song.authors.join(", ");
+		songAuthorsInput = new FlxUIInputText(10, check_disableNoteRGB.y + check_disableNoteRGB.height + 20, 150, authors);
+		blockPressWhileTypingOn.push(songAuthorsInput);
+
 		//
 		noteSkinInputText = new FlxUIInputText(10, 280, 150, _song.arrowSkin != null ? _song.arrowSkin : '', 8);
 		blockPressWhileTypingOn.push(noteSkinInputText);
@@ -1397,6 +1402,8 @@ class ChartingState extends MusicBeatState
 		tab_group_data.add(gameOverEndInputText);
 
 		tab_group_data.add(check_disableNoteRGB);
+
+		tab_group_data.add(songAuthorsInput);
 		
 		tab_group_data.add(reloadNotesButton);
 		tab_group_data.add(noteSkinInputText);
@@ -1406,6 +1413,8 @@ class ChartingState extends MusicBeatState
 		tab_group_data.add(new FlxText(gameOverSoundInputText.x, gameOverSoundInputText.y - 15, 0, 'Game Over Death Sound (sounds/):'));
 		tab_group_data.add(new FlxText(gameOverLoopInputText.x, gameOverLoopInputText.y - 15, 0, 'Game Over Loop Music (music/):'));
 		tab_group_data.add(new FlxText(gameOverEndInputText.x, gameOverEndInputText.y - 15, 0, 'Game Over Retry Music (music/):'));
+
+		tab_group_data.add(new FlxText(songAuthorsInput.x, songAuthorsInput.y - 15, 0, 'Song Authors (seperated by comma):'));
 
 		tab_group_data.add(new FlxText(noteSkinInputText.x, noteSkinInputText.y - 15, 0, 'Note Texture:'));
 		tab_group_data.add(new FlxText(noteSplashesInputText.x, noteSplashesInputText.y - 15, 0, 'Note Splashes Texture:'));
@@ -1630,6 +1639,10 @@ class ChartingState extends MusicBeatState
 			}
 			else if(sender == gameOverEndInputText) {
 				_song.gameOverEnd = gameOverEndInputText.text;
+			}
+			else if(sender == songAuthorsInput)
+			{
+				_song.authors = Lambda.map(songAuthorsInput.text.split(","), (item) -> item.trim());
 			}
 			else if(curSelectedNote != null)
 			{
