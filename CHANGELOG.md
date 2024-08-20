@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - TBD
 ### Added
-- a rating.txt can be included in a song's data folder to alter the song ratings
+- Maverick and Kazemi sprites
+- A rating.txt can be included in a song's data folder to alter the song ratings
+- Song credits appearing at the beginning of a song
 
 ### Fixed
-- Alphabet animation logging errors
-- Boyfriend HEY animation logging errors
+- Several animation logging errors
